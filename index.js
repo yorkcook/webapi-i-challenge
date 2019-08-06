@@ -88,8 +88,9 @@ server.put("/users/:id", (req, res) => {
   }
 });
 
-server.delete("./users/:id", (req, res) => {
-  const { id } = req.params.id;
+server.delete("/users/:id", (req, res) => {
+  const id = req.params.id;
+  console.log("delete", id);
 
   if (id) {
     Users.remove(id)
